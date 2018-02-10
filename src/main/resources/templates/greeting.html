@@ -1,10 +1,40 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Getting Started: Serving Web Content</title>
+<title>My first Webapplication</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-	<p th:text="'Hello, ' + ${name} + '!'" />
+	<header>
+		<h1>My first Web-Application</h1>
+	</header>
+	<nav>
+		<h1>Navigation</h1>
+	</nav>
+
+	<article>
+		<section>
+			<p th:text="'Hello, ' + ${name} + '!'" />
+			<p>p-test</p>
+			<p id="myId">id-test</p>
+			<p class="myClass">class-test</p>
+
+			<form action="/greetingSubmit" method="post">
+				Please enter your name: <input type="text" name="newName" /> <input
+					type="submit" value="send" name="sub" />
+			</form>
+
+			<aside>Section-Aside</aside>
+		</section>
+		<aside>Article Aside</aside>
+	</article>
+
+
+	<footer>
+		<h1>My Footer</h1>
+	</footer>
 </body>
+
 </html>

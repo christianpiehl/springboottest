@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+/* p { */
+/*    color:white; */
+/*    background-color:gray; */
+/* } */
+
+#myId {
+	color:yellow;
+}
+.myClass {
+	color:red;
+}
