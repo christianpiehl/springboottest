@@ -22,6 +22,9 @@ import com.zaxxer.hikari.HikariDataSource;
 @EnableTransactionManagement
 public class PersistenceContext {
 
+	/*
+	 * Environment is loaded from application.properties
+	 */
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource(Environment env) {
 		HikariConfig dataSourceConfig = new HikariConfig();
@@ -75,5 +78,5 @@ public class PersistenceContext {
 		transactionManager.setEntityManagerFactory(entityManagerFactory);
 		return transactionManager;
 	}
-	
+
 }

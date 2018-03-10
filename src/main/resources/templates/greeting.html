@@ -16,17 +16,18 @@
 
 	<article>
 		<section>
+			<aside>Section-Aside</aside>
 			<p th:text="'Hello, ' + ${name} + '!'" />
 			<p>p-test</p>
 			<p id="myId">id-test</p>
 			<p class="myClass">class-test</p>
 
 			<form action="/greetingSubmit" method="post">
-				Please enter your name: <input type="text" name="newName" /> <input
-					type="submit" value="send" name="sub" />
+				<p>Please enter your name:</p>
+				<input type="text" name="newName" /> <input type="submit"
+					value="send" name="sub" />
 			</form>
 
-			<aside>Section-Aside</aside>
 		</section>
 		<aside>Article Aside</aside>
 	</article>

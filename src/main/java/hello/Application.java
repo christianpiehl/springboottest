@@ -5,14 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
 
 import org.h2.tools.Server;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
@@ -20,17 +16,18 @@ import org.springframework.context.annotation.ComponentScan;
 public class Application {
 
 	public static void main(String[] args) {
-		startDatabase();
+//		startDatabase();
 //		testDatabase();
 		SpringApplication.run(Application.class, args);
 	}
 
 	private static void startDatabase() {
 		try {
+			//muss hier gestartet werden, damit man Zugriff auf die Embedded Datenbanken dieser JVM bekommt
 			Server webServer = Server.createWebServer("-webAllowOthers", "-webPort", "8082").start();
 			System.out.println(webServer.getStatus());
-			Server server = Server.createTcpServer().start();
-			System.out.println(server.getStatus());
+//			Server server = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").start();
+//			System.out.println(server.getStatus());
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(0);
